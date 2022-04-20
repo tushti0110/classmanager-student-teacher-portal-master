@@ -1,0 +1,33 @@
+{% extends 'classroom/base.html' %}
+{% block content %}
+
+
+<div class="container">
+  <div class="jumbotron">
+{% if teacher.teacher_assignment.count == 0 %}
+  <h2>No Questions Uploaded Yet</h2>
+{% else %}
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Question</th>
+        <th scope="col">Uploaded Date</th>
+        <th scope="col">Keyword</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for assignment in teacher.teacher_assignment.all %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ assignment.assignment_name }}</td>
+          <td>{{ assignment.created_at }}</td>
+          <td>{{ context }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+</div>
+</div>
+{% endblock %}

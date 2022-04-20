@@ -1,0 +1,33 @@
+<!--
+Template for adding marks. This template can only be accessed by teachers and it contains form where teachers can add marks for specific student.
+-->
+
+{% extends 'classroom/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+<table class='table'>
+  <thead class="thead-dark">
+    <tr>
+      <!-- <th scope="col">Sr. no.</th>
+      <th scope="col">Topic</th> -->
+      <th> Marks Obtained </th>
+      <th> Jaccard </th>
+      <th> Language Check </th>
+      <th> Keyword Matching </th>
+      <th> BERT </th>
+      <th> Concept Graph </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>{{given_marks}}</th>
+      <th>{{score_jaccard}}</th>
+      <th>{{score_language_check}}</th>
+      <th>{{score_keyword_matching}}</th>
+      <th>{{score_bert}}</th>
+      <th>{{score_graph}}</th>
+    </tr> 
+  </tbody>
+</table>
+{% endblock %}
